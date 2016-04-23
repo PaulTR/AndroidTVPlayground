@@ -22,6 +22,8 @@
 
         <activity android:name=".VideoDetailsActivity" />
         <activity android:name=".PlayerActivity" />
+        <activity android:name=".SlothActivity" />
+        <activity android:name=".AudioPlayerActivity" />
     </application>
 
 </manifest>

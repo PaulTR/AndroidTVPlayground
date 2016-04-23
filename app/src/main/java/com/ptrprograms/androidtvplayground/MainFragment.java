@@ -29,7 +29,7 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
         super.onActivityCreated(savedInstanceState);
         loadData();
 
-        setTitle("Apress Media Player");
+        setTitle("Android TV");
         setHeadersState(HEADERS_HIDDEN);
         setHeadersTransitionOnBackEnabled(true);
 
@@ -67,9 +67,20 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
             }
         }
 
-        //setupPreferences(adapter);
+        setupPreferences(adapter);
 
         setAdapter(adapter);
+    }
+
+    private void setupPreferences( ArrayObjectAdapter adapter ) {
+
+        HeaderItem gridHeader = new HeaderItem( "Preferences" );
+        PreferenceCardPresenter mGridPresenter = new PreferenceCardPresenter();
+        ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter( mGridPresenter );
+        gridRowAdapter.add(getResources().getString(R.string.sloth));
+        gridRowAdapter.add("Now Playing");
+        adapter.add(new ListRow(gridHeader, gridRowAdapter));
+
     }
 
     private List<String> getCategories() {
@@ -93,6 +104,15 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
             Intent intent = new Intent(getActivity(), VideoDetailsActivity.class);
             intent.putExtra(VideoDetailsFragment.EXTRA_VIDEO, video);
             startActivity(intent);
+        } else if( item instanceof String ) {
+            if( ((String) item).equalsIgnoreCase( getString( R.string.sloth ) ) ) {
+                Intent intent = new Intent( getActivity(), SlothActivity.class );
+                startActivity( intent );
+            }
+            else if( ((String) item).equalsIgnoreCase("Now Playing")) {
+                Intent intent= new Intent( getActivity(), AudioPlayerActivity.class);
+                startActivity(intent);
+            }
         }
     }
 }

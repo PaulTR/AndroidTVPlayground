@@ -12,7 +12,6 @@ import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.OnActionClickedListener;
 import android.support.v17.leanback.widget.PlaybackControlsRow;
 import android.support.v17.leanback.widget.PlaybackControlsRowPresenter;
-import android.util.Log;
 import android.widget.Toast;
 
 public class PlayerControlsFragment extends PlaybackOverlayFragment implements OnActionClickedListener {
@@ -46,7 +45,7 @@ public class PlayerControlsFragment extends PlaybackOverlayFragment implements O
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setBackgroundType(PlaybackOverlayFragment.BG_LIGHT);
-        setFadingEnabled(false);
+        setFadingEnabled(true);
 
         mControlsCallback = (PlayerControlsListener) getActivity();
         mVideo = (Video) getActivity().getIntent().getSerializableExtra(VideoDetailsFragment.EXTRA_VIDEO);
