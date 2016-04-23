@@ -1,15 +1,15 @@
 package com.ptrprograms.androidtvplayground;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.io.File;
 
-/**
- * Created by Paul on 10/10/15.
- */
 public class PlayerActivity extends Activity implements PlayerControlsFragment.PlayerControlsListener {
     private VideoView mVideoView;
     private Video mVideo;
@@ -29,7 +29,15 @@ public class PlayerActivity extends Activity implements PlayerControlsFragment.P
 
     private void initVideoPlayer() {
         mVideo = (Video) getIntent().getSerializableExtra( VideoDetailsFragment.EXTRA_VIDEO );
-        mVideoView.setVideoPath( mVideo.getVideoUrl() );
+
+        try {
+            String link= mVideo.getVideoUrl();
+            Uri video = Uri.parse(link);
+            mVideoView.setVideoURI(video);
+            mVideoView.start();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error connecting", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

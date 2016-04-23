@@ -2,9 +2,6 @@ package com.ptrprograms.androidtvplayground;
 
 import java.io.Serializable;
 
-/**
- * Created by Paul on 10/14/15.
- */
 public class Video implements Serializable {
 
     private String title;

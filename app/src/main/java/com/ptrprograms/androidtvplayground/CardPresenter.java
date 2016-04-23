@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by Paul on 9/17/15.
- */
 public class CardPresenter extends Presenter {
 
     static class ViewHolder extends Presenter.ViewHolder {

@@ -5,9 +5,6 @@ import android.content.Context;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by Paul on 9/16/15.
- */
 public class Utils {
 
     private Utils() {}

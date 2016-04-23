@@ -2,9 +2,6 @@ package com.ptrprograms.androidtvplayground;
 
 import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
 
-/**
- * Created by Paul on 9/27/15.
- */
 public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
     @Override
     protected void onBindDescription(ViewHolder viewHolder, Object item) {

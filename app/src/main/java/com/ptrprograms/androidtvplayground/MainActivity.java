@@ -3,9 +3,6 @@ package com.ptrprograms.androidtvplayground;
 import android.app.Activity;
 import android.os.Bundle;
 
-/**
- * Created by Paul on 10/11/15.
- */
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -20,9 +20,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Paul on 10/11/15.
- */
 public class MainFragment extends BrowseFragment implements OnItemViewClickedListener {
 
     private List<Video> mVideos = new ArrayList<Video>();

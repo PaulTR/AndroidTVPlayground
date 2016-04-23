@@ -31,9 +31,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Paul on 10/17/15.
- */
 public class VideoDetailsFragment extends DetailsFragment
         implements OnItemViewClickedListener, OnActionClickedListener {
 

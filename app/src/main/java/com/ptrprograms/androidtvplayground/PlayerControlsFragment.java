@@ -15,9 +15,6 @@ import android.support.v17.leanback.widget.PlaybackControlsRowPresenter;
 import android.util.Log;
 import android.widget.Toast;
 
-/**
- * Created by Paul on 10/10/15.
- */
 public class PlayerControlsFragment extends PlaybackOverlayFragment implements OnActionClickedListener {
 
     public interface PlayerControlsListener {
