@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Media Player</string>
     <string name="sloth">Give us the sloth!</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="picture_in_picture">Picture in Picture</string>
+    <string name="guided_step">Guided Step</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -78,7 +78,10 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
         PreferenceCardPresenter mGridPresenter = new PreferenceCardPresenter();
         ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter( mGridPresenter );
         gridRowAdapter.add(getResources().getString(R.string.sloth));
-        gridRowAdapter.add("Now Playing");
+        gridRowAdapter.add(getString(R.string.now_playing));
+        gridRowAdapter.add(getString(R.string.picture_in_picture));
+        gridRowAdapter.add(getString(R.string.settings));
+        gridRowAdapter.add(getString(R.string.guided_step));
         adapter.add(new ListRow(gridHeader, gridRowAdapter));
 
     }
@@ -108,9 +111,17 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
             if( ((String) item).equalsIgnoreCase( getString( R.string.sloth ) ) ) {
                 Intent intent = new Intent( getActivity(), SlothActivity.class );
                 startActivity( intent );
-            }
-            else if( ((String) item).equalsIgnoreCase("Now Playing")) {
+            } else if( ((String) item).equalsIgnoreCase(getString(R.string.now_playing))) {
                 Intent intent= new Intent( getActivity(), AudioPlayerActivity.class);
+                startActivity(intent);
+            } else if( ((String) item).equalsIgnoreCase(getString(R.string.picture_in_picture))) {
+                Intent intent = new Intent(getActivity(), PictureInPictureActivity.class);
+                intent.putExtra(VideoDetailsFragment.EXTRA_VIDEO, mVideos.get(1));
+                startActivity(intent);
+            } else if( ((String) item).equalsIgnoreCase(getString(R.string.guided_step))) {
+
+            } else if( ((String) item).equalsIgnoreCase(getString(R.string.settings))) {
+                Intent intent = new Intent(getActivity(), SettingsActivity.class);
                 startActivity(intent);
             }
         }

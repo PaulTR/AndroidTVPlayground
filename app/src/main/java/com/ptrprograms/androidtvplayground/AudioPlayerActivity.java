@@ -14,6 +14,7 @@ public class AudioPlayerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_now_playing);
         mSession = new MediaSession(this, "MusicService");
         mSession.setCallback(new MediaSessionCallback());
         mSession.setFlags(MediaSession.FLAG_HANDLES_MEDIA_BUTTONS |
@@ -90,6 +91,8 @@ public class AudioPlayerActivity extends Activity {
             mSession.setActive(true);
         }
     }
+
+    private void tryToGetAudioFocus() {}
 
     @Override
     protected void onDestroy() {

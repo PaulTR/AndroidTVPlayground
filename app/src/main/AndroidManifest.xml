@@ -2,12 +2,15 @@
     package="com.ptrprograms.androidtvplayground">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
     <uses-feature
         android:name="android.software.leanback"
         android:required="true" />
+
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
         <activity
@@ -24,6 +27,32 @@
         <activity android:name=".PlayerActivity" />
         <activity android:name=".SlothActivity" />
         <activity android:name=".AudioPlayerActivity" />
+        <activity android:name=".GuidedStepActivity" />
+        <activity android:name=".MediaSearchActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".PictureInPictureActivity"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTask"
+            android:configChanges=
+                "screenSize|smallestScreenSize|screenLayout|orientation" />
+
+
+        <service android:name=".RecommendationService"
+            android:enabled="true" />
+
+        <provider android:name=".VideoContentProvider"
+            android:authorities="com.ptrprograms.androidtvplayground"
+            android:exported="true" />
+
+        <receiver android:name=".BootupReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
