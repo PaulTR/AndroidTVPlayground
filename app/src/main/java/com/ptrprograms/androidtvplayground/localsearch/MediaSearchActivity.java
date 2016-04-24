@@ -1,8 +1,10 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.localsearch;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.ptrprograms.androidtvplayground.R;
 
 public class MediaSearchActivity extends Activity {
     @Override

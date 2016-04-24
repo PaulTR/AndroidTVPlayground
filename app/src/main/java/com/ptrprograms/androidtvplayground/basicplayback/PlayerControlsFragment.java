@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.basicplayback;
 
 import android.os.Bundle;
 import android.support.v17.leanback.app.PlaybackOverlayFragment;
@@ -14,7 +14,10 @@ import android.support.v17.leanback.widget.PlaybackControlsRow;
 import android.support.v17.leanback.widget.PlaybackControlsRowPresenter;
 import android.widget.Toast;
 
-public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragment implements OnActionClickedListener {
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
+
+public class PlayerControlsFragment extends PlaybackOverlayFragment implements OnActionClickedListener {
 
     public interface PlayerControlsListener {
         void play();
@@ -39,7 +42,6 @@ public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragm
     private PlaybackControlsRow.SkipPreviousAction mSkipPreviousAction;
     private PlaybackControlsRow.HighQualityAction mHighQualityAction;
     private PlaybackControlsRow.ClosedCaptioningAction mClosedCaptionAction;
-    private PlaybackControlsRow.PictureInPictureAction mPictureInPictureAction;
 
 
     @Override
@@ -94,7 +96,6 @@ public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragm
         mRewindAction = new PlaybackControlsRow.RewindAction(getActivity());
         mHighQualityAction = new PlaybackControlsRow.HighQualityAction(getActivity());
         mClosedCaptionAction = new PlaybackControlsRow.ClosedCaptioningAction(getActivity());
-        mPictureInPictureAction = new PlaybackControlsRow.PictureInPictureAction(getActivity());
     }
 
     private void setupPrimaryActionsRow() {
@@ -110,7 +111,6 @@ public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragm
         mSecondaryActionsAdapter.add(mShuffleAction);
         mSecondaryActionsAdapter.add(mHighQualityAction);
         mSecondaryActionsAdapter.add(mClosedCaptionAction);
-        mSecondaryActionsAdapter.add(mPictureInPictureAction);
     }
 
     @Override
@@ -127,8 +127,6 @@ public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragm
             ((PlaybackControlsRow.MultiAction) action).nextIndex();
             mPrimaryActionsAdapter.notifyArrayItemRangeChanged(
                     mPrimaryActionsAdapter.indexOf(action), 1);
-        } else if( action.getId() == mPictureInPictureAction.getId() ){
-            getActivity().enterPictureInPicture();
         } else {
             Toast.makeText( getActivity(), "Other action", Toast.LENGTH_SHORT ).show();
         }

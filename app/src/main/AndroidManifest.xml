@@ -14,7 +14,7 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
         <activity
-            android:name="MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/app_name"
             android:logo="@mipmap/ic_launcher">
             <intent-filter>
@@ -23,14 +23,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VideoDetailsActivity" />
-        <activity android:name=".PlayerActivity" />
-        <activity android:name=".SlothActivity" />
-        <activity android:name=".AudioPlayerActivity" />
-        <activity android:name=".GuidedStepActivity" />
-        <activity android:name=".MediaSearchActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".PictureInPictureActivity"
+        <activity android:name=".videodetails.VideoDetailsActivity" />
+        <activity android:name=".basicplayback.PlayerActivity" />
+        <activity android:name=".custom.SlothActivity" />
+        <activity android:name=".nowplaying.NowPlayingActivity" />
+        <activity android:name=".guidedstep.GuidedStepActivity" />
+        <activity android:name=".localsearch.MediaSearchActivity" />
+        <activity android:name=".preferences.SettingsActivity" />
+        <activity android:name=".pictureinpicture.PictureInPictureActivity"
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
             android:launchMode="singleTask"
@@ -38,14 +38,14 @@
                 "screenSize|smallestScreenSize|screenLayout|orientation" />
 
 
-        <service android:name=".RecommendationService"
+        <service android:name=".recommendations.RecommendationService"
             android:enabled="true" />
 
-        <provider android:name=".VideoContentProvider"
+        <provider android:name=".globalsearch.VideoContentProvider"
             android:authorities="com.ptrprograms.androidtvplayground"
             android:exported="true" />
 
-        <receiver android:name=".BootupReceiver"
+        <receiver android:name=".recommendations.BootupReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

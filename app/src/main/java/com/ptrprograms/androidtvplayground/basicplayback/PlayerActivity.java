@@ -1,14 +1,14 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.basicplayback;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import java.io.File;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
 
 public class PlayerActivity extends Activity implements PlayerControlsFragment.PlayerControlsListener {
     private VideoView mVideoView;

@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.localsearch;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,10 +14,15 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.SpeechRecognitionCallback;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.Utils;
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsActivity;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
+import com.ptrprograms.androidtvplayground.main.CardPresenter;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -46,7 +51,7 @@ public class MediaSearchFragment extends SearchFragment implements SpeechRecogni
     }
 
     private void loadData() {
-        String json = Utils.loadJSONFromResource( getActivity(), R.raw.videos );
+        String json = Utils.loadJSONFromResource(getActivity(), R.raw.videos);
         Type collection = new TypeToken<ArrayList<Video>>(){}.getType();
 
         Gson gson = new Gson();

@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +11,18 @@ import android.support.v17.leanback.widget.OnItemViewClickedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.nowplaying.NowPlayingActivity;
+import com.ptrprograms.androidtvplayground.pictureinpicture.PictureInPictureActivity;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.preferences.SettingsActivity;
+import com.ptrprograms.androidtvplayground.Utils;
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsActivity;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
+import com.ptrprograms.androidtvplayground.custom.SlothActivity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -39,7 +47,7 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
     }
 
     private void loadData() {
-        String json = Utils.loadJSONFromResource( getActivity(), R.raw.videos );
+        String json = Utils.loadJSONFromResource(getActivity(), R.raw.videos);
         Type collection = new TypeToken<ArrayList<Video>>(){}.getType();
 
         Gson gson = new Gson();
@@ -112,7 +120,7 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
                 Intent intent = new Intent( getActivity(), SlothActivity.class );
                 startActivity( intent );
             } else if( ((String) item).equalsIgnoreCase(getString(R.string.now_playing))) {
-                Intent intent= new Intent( getActivity(), AudioPlayerActivity.class);
+                Intent intent= new Intent( getActivity(), NowPlayingActivity.class);
                 startActivity(intent);
             } else if( ((String) item).equalsIgnoreCase(getString(R.string.picture_in_picture))) {
                 Intent intent = new Intent(getActivity(), PictureInPictureActivity.class);

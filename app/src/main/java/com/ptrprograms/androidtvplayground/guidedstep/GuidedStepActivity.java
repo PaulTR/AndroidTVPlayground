@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.guidedstep;
 
 import android.app.Activity;
 

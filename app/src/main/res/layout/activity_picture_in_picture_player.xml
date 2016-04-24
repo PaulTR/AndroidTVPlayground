@@ -15,6 +15,6 @@
         android:id="@+id/player_controls"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.ptrprograms.androidtvplayground.PictureInPicturePlayerControlsFragment" />
+        android:name="com.ptrprograms.androidtvplayground.pictureinpicture.PictureInPicturePlayerControlsFragment" />
 
 </RelativeLayout>

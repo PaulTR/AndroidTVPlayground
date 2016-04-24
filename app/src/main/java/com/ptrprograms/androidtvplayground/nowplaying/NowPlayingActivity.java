@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.nowplaying;
 
 import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
@@ -7,7 +7,9 @@ import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.Bundle;
 
-public class AudioPlayerActivity extends Activity {
+import com.ptrprograms.androidtvplayground.R;
+
+public class NowPlayingActivity extends Activity {
 
     MediaSession mSession;
 
@@ -52,12 +54,6 @@ public class AudioPlayerActivity extends Activity {
         //} else {
            // actions |= PlaybackState.ACTION_PLAY;
         //}
-        //if (mCurrentIndexOnQueue > 0) {
-          //  actions |= PlaybackState.ACTION_SKIP_TO_PREVIOUS;
-        //}
-        //if (mCurrentIndexOnQueue < mPlayingQueue.size() - 1) {
-//            actions |= PlaybackState.ACTION_SKIP_TO_NEXT;
-  //      }
         return actions;
     }
 

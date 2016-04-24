@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.custom;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;

@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.pictureinpicture;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
 
 public class PictureInPictureActivity extends Activity implements PictureInPicturePlayerControlsFragment.PlayerControlsListener {
     private VideoView mVideoView;
@@ -26,11 +30,11 @@ public class PictureInPictureActivity extends Activity implements PictureInPictu
 
     private void initVideoPlayer() {
         Video tmpVideo = (Video) getIntent().getSerializableExtra( VideoDetailsFragment.EXTRA_VIDEO );
-        if( mVideo != null && tmpVideo == mVideo ) {
+        if( mVideo != null && tmpVideo.getTitle().equalsIgnoreCase(mVideo.getTitle()) ) {
             return;
-        } else {
-            mVideo = tmpVideo;
         }
+
+        mVideo = tmpVideo;
         try {
             String link= mVideo.getVideoUrl();
             Uri video = Uri.parse(link);

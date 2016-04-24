@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.globalsearch;
 
 import android.app.SearchManager;
 import android.content.ContentProvider;

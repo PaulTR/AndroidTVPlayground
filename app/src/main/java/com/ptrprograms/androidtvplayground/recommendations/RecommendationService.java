@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.recommendations;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -13,6 +13,11 @@ import android.support.v4.content.ContextCompat;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.Utils;
+import com.ptrprograms.androidtvplayground.model.Video;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsActivity;
+import com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -82,7 +87,7 @@ public class RecommendationService extends IntentService {
     }
 
     private void loadData() {
-        String json = Utils.loadJSONFromResource( getApplicationContext(), R.raw.videos );
+        String json = Utils.loadJSONFromResource(getApplicationContext(), R.raw.videos);
         Type collection = new TypeToken<ArrayList<Video>>(){}.getType();
 
         Gson gson = new Gson();

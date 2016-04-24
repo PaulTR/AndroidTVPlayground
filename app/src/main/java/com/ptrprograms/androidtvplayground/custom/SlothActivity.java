@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.custom;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
+
+import com.ptrprograms.androidtvplayground.R;
 
 import java.util.ArrayList;
 import java.util.List;

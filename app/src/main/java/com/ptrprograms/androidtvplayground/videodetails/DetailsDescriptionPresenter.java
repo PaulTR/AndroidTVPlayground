@@ -1,6 +1,8 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.videodetails;
 
 import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
+
+import com.ptrprograms.androidtvplayground.model.Video;
 
 public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
     @Override

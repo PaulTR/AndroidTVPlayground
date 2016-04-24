@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.globalsearch;
 
 import android.app.SearchManager;
 import android.content.ContentValues;
@@ -11,6 +11,9 @@ import android.provider.BaseColumns;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.Utils;
+import com.ptrprograms.androidtvplayground.model.Video;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -118,7 +121,7 @@ private static class VideoDatabaseOpenHelper extends SQLiteOpenHelper {
     private void loadVideos() throws IOException {
         List<Video> videos;
 
-        String json = Utils.loadJSONFromResource( mHelperContext.get(), R.raw.videos );
+        String json = Utils.loadJSONFromResource(mHelperContext.get(), R.raw.videos);
         Type collection = new TypeToken<ArrayList<Video>>(){}.getType();
 
         Gson gson = new Gson();

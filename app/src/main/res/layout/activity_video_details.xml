@@ -8,7 +8,7 @@
     android:background="@mipmap/ic_launcher">
     <fragment
         android:id="@+id/video_detail_fragment"
-        android:name="com.ptrprograms.androidtvplayground.VideoDetailsFragment"
+        android:name="com.ptrprograms.androidtvplayground.videodetails.VideoDetailsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:deviceIds="tv"

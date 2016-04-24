@@ -1,8 +1,10 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.preferences;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v17.preference.LeanbackPreferenceFragment;
+
+import com.ptrprograms.androidtvplayground.R;
 
 public class SettingsFragment extends LeanbackPreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
     @Override

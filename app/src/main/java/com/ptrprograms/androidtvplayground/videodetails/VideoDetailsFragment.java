@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.videodetails;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,11 +19,15 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.SparseArrayObjectAdapter;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.R;
+import com.ptrprograms.androidtvplayground.Utils;
+import com.ptrprograms.androidtvplayground.basicplayback.PlayerActivity;
+import com.ptrprograms.androidtvplayground.main.CardPresenter;
+import com.ptrprograms.androidtvplayground.model.Video;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -115,7 +119,7 @@ public class VideoDetailsFragment extends DetailsFragment
 
     private void loadRelatedMedia( ArrayObjectAdapter adapter ) {
 
-        String json = Utils.loadJSONFromResource( getActivity(), R.raw.videos );
+        String json = Utils.loadJSONFromResource(getActivity(), R.raw.videos);
         Gson gson = new Gson();
         Type collection = new TypeToken<ArrayList<Video>>(){}.getType();
         List<Video> videos = gson.fromJson( json, collection );

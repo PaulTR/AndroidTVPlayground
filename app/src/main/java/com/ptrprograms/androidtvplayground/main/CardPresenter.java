@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.main;
 
 import android.content.Context;
 import android.support.v17.leanback.widget.ImageCardView;
@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ptrprograms.androidtvplayground.model.Video;
 import com.squareup.picasso.Picasso;
 
 public class CardPresenter extends Presenter {

@@ -1,4 +1,4 @@
-package com.ptrprograms.androidtvplayground;
+package com.ptrprograms.androidtvplayground.recommendations;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
