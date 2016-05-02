@@ -14,6 +14,7 @@ import android.support.v17.leanback.widget.RowPresenter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ptrprograms.androidtvplayground.guidedstep.GuidedStepActivity;
 import com.ptrprograms.androidtvplayground.nowplaying.NowPlayingActivity;
 import com.ptrprograms.androidtvplayground.pictureinpicture.PictureInPictureActivity;
 import com.ptrprograms.androidtvplayground.R;
@@ -127,7 +128,8 @@ public class MainFragment extends BrowseFragment implements OnItemViewClickedLis
                 intent.putExtra(VideoDetailsFragment.EXTRA_VIDEO, mVideos.get(1));
                 startActivity(intent);
             } else if( ((String) item).equalsIgnoreCase(getString(R.string.guided_step))) {
-
+                Intent intent = new Intent(getActivity(), GuidedStepActivity.class);
+                startActivity(intent);
             } else if( ((String) item).equalsIgnoreCase(getString(R.string.settings))) {
                 Intent intent = new Intent(getActivity(), SettingsActivity.class);
                 startActivity(intent);
