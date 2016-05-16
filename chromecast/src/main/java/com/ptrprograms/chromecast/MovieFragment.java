@@ -1,5 +1,6 @@
 package com.ptrprograms.chromecast;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
@@ -37,6 +38,8 @@ public class MovieFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-
+        Intent intent = new Intent(getActivity(), VideoDetailActivity.class );
+        intent.putExtra(VideoDetailActivity.EXTRA_VIDEO, mAdapter.getItem(position) );
+        startActivity(intent);
     }
 }

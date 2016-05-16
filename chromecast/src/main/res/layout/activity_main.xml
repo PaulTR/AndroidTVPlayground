@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_movie_list"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ptrprograms.chromecast.MainActivity"
-    android:name="com.ptrprograms.chromecast.MovieFragment" />
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fragment_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.ptrprograms.chromecast.MainActivity"
+        android:name="com.ptrprograms.chromecast.MovieFragment" />
+
+    <com.google.android.libraries.cast.companionlibrary.widgets.MiniController
+        android:id="@+id/minicontroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:auto_setup="true"
+        android:visibility="gone"/>
+</RelativeLayout>
