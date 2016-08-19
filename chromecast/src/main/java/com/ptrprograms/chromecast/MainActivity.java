@@ -90,4 +90,9 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         VideoCastManager.getInstance().decrementUiCounter();
     }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 }

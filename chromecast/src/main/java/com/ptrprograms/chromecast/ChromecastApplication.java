@@ -13,7 +13,7 @@ public class ChromecastApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-       String chromecastAppId = "";
+       String chromecastAppId = "C54BAA8D";
 
         CastConfiguration options = new CastConfiguration.Builder(chromecastAppId)
                 .enableAutoReconnect()

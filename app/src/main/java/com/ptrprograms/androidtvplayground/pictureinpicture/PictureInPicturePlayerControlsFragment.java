@@ -121,17 +121,15 @@ public class PictureInPicturePlayerControlsFragment extends PlaybackOverlayFragm
         if(action.getId() == mPlayPauseAction.getId()) {
             if(mPlayPauseAction.getIndex()
                     == PlaybackControlsRow.PlayPauseAction.PLAY) {
-                setFadingEnabled(true);
                 mControlsCallback.play();
             } else {
-                setFadingEnabled( false );
                 mControlsCallback.pause();
             }
             ((PlaybackControlsRow.MultiAction) action).nextIndex();
             mPrimaryActionsAdapter.notifyArrayItemRangeChanged(
                     mPrimaryActionsAdapter.indexOf(action), 1);
         } else if( action.getId() == mPictureInPictureAction.getId() ){
-            getActivity().enterPictureInPicture();
+            getActivity().enterPictureInPictureMode();
         } else {
             Toast.makeText( getActivity(), "Other action", Toast.LENGTH_SHORT ).show();
         }

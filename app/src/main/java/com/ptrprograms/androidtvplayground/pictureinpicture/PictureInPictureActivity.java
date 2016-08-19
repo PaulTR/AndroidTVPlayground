@@ -55,10 +55,6 @@ public class PictureInPictureActivity extends Activity implements PictureInPictu
         mVideoView.pause();
     }
 
-    @Override
-    public void onPictureInPictureChanged(boolean inPictureInPicture) {
-        super.onPictureInPictureChanged(inPictureInPicture);
-    }
 
     @Override
     protected void onNewIntent(Intent intent) {

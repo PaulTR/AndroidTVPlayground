@@ -118,10 +118,8 @@ public class PlayerControlsFragment extends PlaybackOverlayFragment implements O
         if(action.getId() == mPlayPauseAction.getId()) {
             if(mPlayPauseAction.getIndex()
                     == PlaybackControlsRow.PlayPauseAction.PLAY) {
-                setFadingEnabled(true);
                 mControlsCallback.play();
             } else {
-                setFadingEnabled( false );
                 mControlsCallback.pause();
             }
             ((PlaybackControlsRow.MultiAction) action).nextIndex();
